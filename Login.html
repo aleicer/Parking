@@ -32,14 +32,14 @@
                     <p class="text-center py-4">Inicia sesión con tu cuenta </p>
                 </div>
                 <!-- Login -->
-                <form action="#">
+                <form action="#" id="formularioIngresar">
                     <div class="mb-4 fw-semibold">
                         <label for="identifiación" class="form-label">Identificación</label>
-                        <input type="identifiación" class="form-control" name="identifiación" placeholder="Ingrese su número de identificacion">
+                        <input id="correoLogin" type="identifiación" class="form-control" name="identifiación" placeholder="Ingrese su número de identificacion">
                     </div>
                     <div class="mb-4 fw-semibold">
                         <label for="Password" class="form-label">Clave</label>
-                        <input type="Password" class="form-control" name="Password" placeholder="Ingrese su clave">
+                        <input id="claveLogin" type="Password" class="form-control" name="Password" placeholder="Ingrese su clave">
                     </div>
                     <div class="mt-4 mb-3 form-check">
                         <input type="checkbox" name="connected" class="form-check-input">
@@ -60,6 +60,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="api_backend_conexion.js"></script>
 </body>
 </html>
 

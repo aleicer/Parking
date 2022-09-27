@@ -1,0 +1,206 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.follower {color:orange;}
+
+.container{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.background-img{
+  background-image: url("https://i.imgur.com/7VNRrNR.png");
+  height: 400px;
+  width: 800px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 5% auto;
+  padding:20px;
+  border: 1px solid #2a3cad;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px #333;
+  position: relative;
+}
+
+.content h2 {
+    font-size: 22px !important;
+    font-family: Arial;
+}
+
+.box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url("https://cdn.streamelements.com/uploads/b69bcc0f-083e-47a4-8d5c-3c15d9a477b4.png");
+  background-position:top -60px;
+  background-repeat:no-repeat;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 100px;
+  /*background: #111845a6;*/
+  border-radius:200px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgb(23, 32, 90, 0.4);
+  border: 2px solid #2a3cad;
+  color: white;
+  padding: 20px;
+}
+
+.box-logo {
+    float: right;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    z-index: -999;
+}
+.box:before{
+  content: '';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background: rgba(255,255,255,0.1);
+  transition:0.5s;
+  pointer-events: none;
+}
+
+.box:hover:before{
+  left:-50%;
+  transform: skewX(-5deg);
+}
+
+
+.box .content{
+  position:absolute;
+  top:2px;
+  left:2px;
+  right:2px;
+  border-radius:200px;
+  bottom:2px;
+  border:2px solid #03a9f4;
+  padding:30px;
+  text-align:center;
+  box-shadow: 0 5px 10px rgba(9,0,0,0.5);
+  background-image:url(https://i.imgur.com/pFOjaSR.gif);
+  background-position: center;
+  
+}
+
+.box span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  
+}
+
+.box span:nth-child(1)
+{
+  transform:rotate(0deg);
+}
+
+.box span:nth-child(3)
+{
+  transform:rotate(180deg);
+}
+
+
+
+.box span:before
+{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 2px;
+  background: #50dfdb;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+  transform:scaleX(0);
+  transform-origin: left;
+  }
+  50%
+  {
+    transform:scaleX(1);
+  transform-origin: left;
+  }
+  50.1%
+  {
+    transform:scaleX(1);
+  transform-origin: right;
+    
+  }
+  
+  100%
+  {
+    transform:scaleX(0);
+  transform-origin: right;
+    
+  }
+ 
+} 
+
+
+
+.dropdownmenu ul, .dropdownmenu li {
+	margin: 0;
+	padding: 0;
+}
+.dropdownmenu ul {
+	background: gray;
+	list-style: none;
+	width: 100%;
+}
+.dropdownmenu li {
+	float: left;
+	position: relative;
+	width:auto;
+}
+.dropdownmenu a {
+	background: #30A6E6;
+	color: #FFFFFF;
+	display: block;
+	font: bold 12px/20px sans-serif;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+}
+.dropdownmenu li:hover a {
+	background: #000000;
+}
+#submenu {
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 35px;
+	visibility: hidden;
+	z-index: 1;
+}
+li:hover ul#submenu {
+	opacity: 1;
+	top: 40px;	/* adjust this as per top nav padding top & bottom comes */
+	visibility: visible;
+}
+#submenu li {
+	float: none;
+	width: 100%;
+}
+#submenu a:hover {
+	background: #DF4B05;
+}
+#submenu a {
+	background-color:#000000;
+}
