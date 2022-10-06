@@ -1,4 +1,7 @@
+// =============================================================================================
 //guardar usuario en base de datos
+// =============================================================================================
+
 const formularioCrear = document.querySelector('#formularioCrear')
 
 try {
@@ -31,7 +34,7 @@ try {
 
 
 // =============================================================================================
-// encontrar usuario guardado en base de datos login
+// encontrar usuario guardado en base de datos "login"
 // =============================================================================================
 
 const formularioIngresar = document.querySelector('#formularioIngresar')
@@ -56,8 +59,50 @@ try {
         }
       }
 
-      return alert('usuario no encontrado')
+      return alert('Usuario no encontrado')
 
+    })
+  }
+} catch (error) {
+  console.log(error)
+}
+
+// =============================================================================================
+// Generar ticket y vehiculo
+// =============================================================================================
+
+const formularioCrearTicket = document.querySelector('#formularioCrearTicket')
+
+try {
+  formularioCrearTicket.addEventListener('submit', (e) => {
+    e.preventDefault();
+    guardarTicket()
+  })
+
+  function guardarTicket() {
+    const urlVehiculo = 'https://test-parqueadero.onrender.com/api/vehiculo/'
+    const urlTicket = 'https://test-parqueadero.onrender.com/api/ticket/'
+    const tipo_vehiculo = document.querySelector('#tipo_vehiculo').value
+    const placa = document.querySelector('#placa').value
+    const hora_entrada = document.querySelector('#hora_entrada').value
+    const hora_salida = document.querySelector('#hora_salida').value
+    const tarifa = document.querySelector('#tarifa').value
+    const total_pagar = document.querySelector('#total_pagar').value
+    
+    axios.post(urlVehiculo, {
+      placa: placa,
+      tipo_vehiculo: tipo_vehiculo
+    }).then(res => {
+      const idVehiculo = res.data.id
+      axios.post(urlTicket,{
+        tarifa: tarifa,
+        hora_entrada: hora_entrada,
+        hora_salida: hora_salida, 
+        idVehiculo: idVehiculo
+      }).then(response => {
+        console.log(response.data)
+        alert('Ticket creado')
+      })
     })
   }
 } catch (error) {
